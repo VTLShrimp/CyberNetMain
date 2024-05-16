@@ -19,9 +19,8 @@ namespace CyberNet
         ThanhVienBUS ThanhVienBUS;
         ThanhVienListBUS ThanhVienListBUS;
         LichSuBUS lichSuBUS;
-  
-
-        private List<MayTinh> customControls = new List<MayTinh>();
+        private bool isInitialized = false;
+        private readonly List<MayTinh> customControls = new List<MayTinh>();
 
         public Admin()
         {
@@ -52,14 +51,18 @@ namespace CyberNet
 
         private void KhoiTaoMay()
         {
+            if (isInitialized)
+            {
+                return;
+            }
             for (int i = 0; i < 100; i++)
             {
                 var item = new MayTinh();
-                item.setText($"{i + 1:00}");
+                item.setText($"Máy "+ $"{i + 1:00}");
                 customControls.Add(item);
                 flowLayoutPanel1.Controls.Add(item);
             }
-
+            isInitialized = true;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight; // Hiển thị từ trái phải
             flowLayoutPanel1.WrapContents = true;
@@ -100,6 +103,7 @@ namespace CyberNet
             txttong.Text = tong.ToString();
             KhoiTaoMay();
             countmay();
+            Console.WriteLine("Admin loaded");
         }
         private void btnthem_Click(object sender, EventArgs e)
         {
