@@ -26,6 +26,8 @@ namespace CyberNet
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+           
         }
 
         public void countmay()
@@ -90,6 +92,16 @@ namespace CyberNet
             dgThanhvien.Columns[4].Width = 150;
         }
 
+        private void DinhangLichsu()
+        {
+            dgLichsu.ColumnHeadersHeight = 40;
+            dgLichsu.Columns[0].HeaderText = "Tên tài khoản";
+            dgLichsu.Columns[0].Width = 130;
+            dgLichsu.Columns[1].HeaderText = "Số tiền";
+            dgLichsu.Columns[1].Width = 100;
+            dgLichsu.Columns[2].HeaderText = "Ngày nạp";
+            dgLichsu.Columns[2].Width = 150;
+        }
 
         private void Admin_Load(object sender, EventArgs e)
         {
@@ -119,6 +131,7 @@ namespace CyberNet
                DataGridViewRow row = dgThanhvien.Rows[cell[0].RowIndex];
                string TenTaiKhoan = row.Cells["User_Name"].Value.ToString();
                dgLichsu.DataSource = ThanhVienListBUS.RechargeHistory(TenTaiKhoan);
+                DinhangLichsu();
                 
             }
         }

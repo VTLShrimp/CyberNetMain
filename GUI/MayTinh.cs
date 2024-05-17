@@ -61,8 +61,6 @@ namespace CyberNet.GUI
             int minutes = (counter / 60) % 60;
             int hours = (counter / 3600);
             guna2TextBox1.Text = string.Format("        {0:D2}:{1:D2}:{2:D2}", hours, minutes, seconds);
-            Console.WriteLine("is ticked");
-         
         }
     }
     
