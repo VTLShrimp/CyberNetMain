@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CyberNet.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,7 +50,7 @@ namespace CyberNet
                     if (dt.Rows.Count > 0)
                     {
                         MessageBox.Show("Dang nhap thanh cong", "Thong bao", MessageBoxButtons.OK);
-                        Admin list = new Admin();
+                        NewAdmin list = new NewAdmin();
                         list.Show();
                         Hide();
                     }
