@@ -14,6 +14,8 @@ namespace CyberNet.GUI
 {
     public partial class NewAdmin : Form
     {
+        private QuanLyMay quanLyMayForm = new QuanLyMay();
+        private QuanLyUser quanLyUserForm = new QuanLyUser();
         public NewAdmin()
         {
             InitializeComponent();
@@ -55,14 +57,14 @@ namespace CyberNet.GUI
 
         private void Computer_button_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new QuanLyMay());
+            OpenChildForm(quanLyMayForm);
             HighlightButton(Computer_button);
 
         }
 
         private void User_button_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new QuanLyUser());
+            OpenChildForm(quanLyUserForm);
             HighlightButton(User_button);
         }
 
