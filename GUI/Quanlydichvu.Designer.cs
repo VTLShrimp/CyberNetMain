@@ -255,9 +255,9 @@
             this.label16.Location = new System.Drawing.Point(867, 185);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 24);
+            this.label16.Size = new System.Drawing.Size(48, 24);
             this.label16.TabIndex = 67;
-            this.label16.Text = "VNĐ";
+            this.label16.Text = "USD";
             // 
             // txtInventoryNumberOfFood
             // 
