@@ -56,7 +56,11 @@ namespace CyberNet.DTO
         public void DeleteThanhVien(string User_Name)
         {
             string sql = "delete from Customer_List where User_Name = '" + User_Name + "'";
+            string sql2 = "delete from RechargeHistory where User_Name = '" + User_Name + "'";
+            string sql3 = "delete from Customer_Accout where User_Name = '" + User_Name + "'";
             dataProvider.executeNonQuery(sql);
+            dataProvider.executeNonQuery(sql2);
+            dataProvider.executeNonQuery(sql3);
         }
 
         public bool CheckThanhVien(string User_Name)

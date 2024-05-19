@@ -13,6 +13,8 @@ namespace CyberNet.GUI
 {
     public partial class Register : Form
     {
+        public Action FormClosedEvent { get; internal set; }
+
         public Register()
         {
             InitializeComponent();

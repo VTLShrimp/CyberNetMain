@@ -16,6 +16,7 @@ namespace CyberNet.GUI
     {
         private QuanLyMay quanLyMayForm = new QuanLyMay();
         private QuanLyUser quanLyUserForm = new QuanLyUser();
+        private StaticView staticView = new StaticView();   
         public NewAdmin()
         {
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace CyberNet.GUI
         {
             ResetButtonBorder();
             button.BorderThickness = 2;
-            button.BorderColor = Color.White;
+            button.BorderColor = Color.Black;
         }
 
         private void Computer_button_Click(object sender, EventArgs e)
@@ -75,7 +76,8 @@ namespace CyberNet.GUI
 
         private void Static_button_Click(object sender, EventArgs e)
         {
-
+            
+            OpenChildForm(staticView);
         }
 
         private void Log_out_Button_Click(object sender, EventArgs e)
