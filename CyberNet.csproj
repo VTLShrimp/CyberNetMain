@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CyberNet</RootNamespace>
     <AssemblyName>CyberNet</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -92,15 +93,19 @@
     <Compile Include="GUI\NewAdmin.Designer.cs">
       <DependentUpon>NewAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Quanlydichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quanlydichvu.Designer.cs">
+      <DependentUpon>Quanlydichvu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuanLyMay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\QuanLyMay.Designer.cs">
       <DependentUpon>QuanLyMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI\QuanLyUser.cs" />
     <Compile Include="GUI\QuanLyUser.Designer.cs">
       <DependentUpon>QuanLyUser.cs</DependentUpon>
     </Compile>
@@ -133,6 +138,9 @@
     <EmbeddedResource Include="GUI\NewAdmin.resx">
       <DependentUpon>NewAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quanlydichvu.resx">
+      <DependentUpon>Quanlydichvu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyMay.resx">
       <DependentUpon>QuanLyMay.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +150,9 @@
     <EmbeddedResource Include="GUI\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StaticView.resx">
+      <DependentUpon>StaticView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -150,6 +161,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

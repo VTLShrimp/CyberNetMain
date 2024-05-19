@@ -117,10 +117,32 @@ namespace CyberNet
             countmay();
             Console.WriteLine("Admin loaded");
         }
+
+        private void ReloadData()
+        {
+            DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
+            DataProvider provider = new DataProvider();
+            provider.connect();
+            ThanhVienListBUS = new ThanhVienListBUS();
+            lichSuBUS = new LichSuBUS();
+            dgThanhvien.DataSource = ThanhVienListBUS.LoadThanhVien();
+            DataGridViewSelectedCellCollection cell = dgThanhvien.SelectedCells;
+            if (cell.Count > 0)
+            {
+                DataGridViewRow row = dgThanhvien.Rows[cell[0].RowIndex];
+                string TenTaiKhoan = row.Cells["User_Name"].Value.ToString();
+                dgLichsu.DataSource = ThanhVienListBUS.RechargeHistory(TenTaiKhoan);
+
+            }
+        }
+
+
         private void btnthem_Click(object sender, EventArgs e)
         {
             Register register = new Register();
+            register.FormClosedEvent += ReloadData;
             register.ShowDialog();
+           
         }
 
         private void dgThanhvien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -235,23 +257,7 @@ namespace CyberNet
            
         }
 
-        private void ReloadData()
-        {
-            DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
-            DataProvider provider = new DataProvider();
-            provider.connect();
-            ThanhVienListBUS = new ThanhVienListBUS();
-            lichSuBUS = new LichSuBUS();
-            dgThanhvien.DataSource = ThanhVienListBUS.LoadThanhVien();
-            DataGridViewSelectedCellCollection cell = dgThanhvien.SelectedCells;
-            if (cell.Count > 0)
-            {
-                DataGridViewRow row = dgThanhvien.Rows[cell[0].RowIndex];
-                string TenTaiKhoan = row.Cells["User_Name"].Value.ToString();
-                dgLichsu.DataSource = ThanhVienListBUS.RechargeHistory(TenTaiKhoan);
-
-            }
-        }
+     
 
         private void dgThanhvien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

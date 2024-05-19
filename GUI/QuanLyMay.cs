@@ -105,12 +105,22 @@ namespace CyberNet.GUI
 
         private void online_button_Click(object sender, EventArgs e)
         {
-
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var item in customControls.Where(x => x.IsActive))
+            {
+                flowLayoutPanel1.Controls.Add(item);
+            }
+            CountMay();
+            offline_button.FillColor = Color.FromArgb(203, 241, 245);
+            All_button.FillColor = Color.FromArgb(203, 241, 245);
+            online_button.FillColor = Color.FromArgb(255, 128, 0);
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+       
     }
 }
