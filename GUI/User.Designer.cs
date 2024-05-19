@@ -72,6 +72,7 @@
             this.gbtnnaptenon.Size = new System.Drawing.Size(114, 55);
             this.gbtnnaptenon.TabIndex = 33;
             this.gbtnnaptenon.Text = "Nạp Tiền online";
+            this.gbtnnaptenon.Click += new System.EventHandler(this.gbtnnaptenon_Click);
             // 
             // pictureBox3
             // 
@@ -84,6 +85,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // gbtnmenu
             // 
@@ -104,6 +106,7 @@
             this.gbtnmenu.Size = new System.Drawing.Size(114, 55);
             this.gbtnmenu.TabIndex = 32;
             this.gbtnmenu.Text = "Menu";
+            this.gbtnmenu.Click += new System.EventHandler(this.gbtnmenu_Click);
             // 
             // Label1
             // 
@@ -124,7 +127,7 @@
             this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_body.Location = new System.Drawing.Point(0, 67);
             this.panel_body.Name = "panel_body";
-            this.panel_body.Size = new System.Drawing.Size(837, 424);
+            this.panel_body.Size = new System.Drawing.Size(880, 424);
             this.panel_body.TabIndex = 35;
             // 
             // panel2
@@ -133,14 +136,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(837, 67);
+            this.panel2.Size = new System.Drawing.Size(880, 67);
             this.panel2.TabIndex = 34;
             // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 491);
+            this.ClientSize = new System.Drawing.Size(880, 491);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_body);
             this.Controls.Add(this.panel2);
