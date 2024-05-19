@@ -81,11 +81,23 @@
     <Compile Include="GUI\MayTinh.Designer.cs">
       <DependentUpon>MayTinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NapTien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\NapTien.Designer.cs">
       <DependentUpon>NapTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Naptienuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Naptienuser.Designer.cs">
+      <DependentUpon>Naptienuser.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\NewAdmin.cs">
       <SubType>Form</SubType>
@@ -123,6 +135,12 @@
     <Compile Include="GUI\StaticView.Designer.cs">
       <DependentUpon>StaticView.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Admin.resx">
@@ -133,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MayTinh.resx">
       <DependentUpon>MayTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NapTien.resx">
       <DependentUpon>NapTien.cs</DependentUpon>
@@ -154,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StaticView.resx">
       <DependentUpon>StaticView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
