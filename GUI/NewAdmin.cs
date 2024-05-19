@@ -17,6 +17,7 @@ namespace CyberNet.GUI
         private QuanLyMay quanLyMayForm = new QuanLyMay();
         private QuanLyUser quanLyUserForm = new QuanLyUser();
         private StaticView staticView = new StaticView();   
+        private Quanlydichvu chatView = new Quanlydichvu(); 
         public NewAdmin()
         {
             InitializeComponent();
@@ -71,7 +72,8 @@ namespace CyberNet.GUI
 
         private void Chat_button_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(chatView);
+            HighlightButton(Chat_button);
         }
 
         private void Static_button_Click(object sender, EventArgs e)

@@ -105,7 +105,9 @@
     <Compile Include="GUI\QuanLyMay.Designer.cs">
       <DependentUpon>QuanLyMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyUser.cs" />
+    <Compile Include="GUI\QuanLyUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\QuanLyUser.Designer.cs">
       <DependentUpon>QuanLyUser.cs</DependentUpon>
     </Compile>
