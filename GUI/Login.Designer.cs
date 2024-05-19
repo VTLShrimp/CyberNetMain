@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.label2 = new System.Windows.Forms.Label();
             this.PassWordTextBox = new System.Windows.Forms.TextBox();
             this.UserText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,21 +44,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(420, 29);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Enter your Username and Password";
-            // 
             // PassWordTextBox
             // 
             this.PassWordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PassWordTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.PassWordTextBox.Location = new System.Drawing.Point(144, 296);
+            this.PassWordTextBox.Location = new System.Drawing.Point(144, 300);
             this.PassWordTextBox.Name = "PassWordTextBox";
             this.PassWordTextBox.Size = new System.Drawing.Size(342, 32);
             this.PassWordTextBox.TabIndex = 20;
@@ -72,7 +61,7 @@
             this.UserText.BackColor = System.Drawing.SystemColors.Window;
             this.UserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserText.ForeColor = System.Drawing.Color.Gray;
-            this.UserText.Location = new System.Drawing.Point(144, 224);
+            this.UserText.Location = new System.Drawing.Point(144, 228);
             this.UserText.Name = "UserText";
             this.UserText.Size = new System.Drawing.Size(342, 32);
             this.UserText.TabIndex = 18;
@@ -94,7 +83,7 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(572, 94);
+            this.pictureBox3.Size = new System.Drawing.Size(572, 205);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 26;
             this.pictureBox3.TabStop = false;
@@ -122,7 +111,7 @@
             // 
             this.ShowPass.AutoSize = true;
             this.ShowPass.CausesValidation = false;
-            this.ShowPass.Location = new System.Drawing.Point(144, 334);
+            this.ShowPass.Location = new System.Drawing.Point(144, 338);
             this.ShowPass.Name = "ShowPass";
             this.ShowPass.Size = new System.Drawing.Size(125, 20);
             this.ShowPass.TabIndex = 21;
@@ -133,7 +122,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(72, 283);
+            this.pictureBox2.Location = new System.Drawing.Point(72, 287);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,7 +132,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(72, 211);
+            this.pictureBox1.Location = new System.Drawing.Point(72, 215);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,7 +155,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 512);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.PassWordTextBox);
             this.Controls.Add(this.UserText);
             this.Controls.Add(this.label1);
@@ -189,7 +177,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox PassWordTextBox;
         private System.Windows.Forms.TextBox UserText;
         private System.Windows.Forms.Label label1;
