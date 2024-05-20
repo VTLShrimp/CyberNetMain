@@ -14,7 +14,7 @@ namespace CyberNet.GUI
 {
     public partial class Quanlydichvu : Form
     {
-        private DataTable dataTable;
+        
         FoodBUS foodBUS ;
 
         public Quanlydichvu()
