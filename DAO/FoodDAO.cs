@@ -46,6 +46,18 @@ namespace CyberNet.DAO
             dataProvider.executeNonQuery(sql);
         }
 
+        public DataTable SreachFoodwithname(string Food_Name)
+        {
+            string sql = "select * from Food_List where Food_Name LIKE '%" + Food_Name + "%'";
+            return dataProvider.executeQuery(sql);
+        }   
+
+        public DataTable SreachFood(string Food_Name , string status)
+        {
+            string sql = "select * from Food_List where Food_Name LIKE '%" + Food_Name + "%' and  Food_Status = '" + status + "'  ";
+            return dataProvider.executeQuery(sql);
+        }
+
         public void updatestatus(string Food_Name, string Food_Status)
         {
             string sql = "update Food_List set Food_Status = '" + Food_Status + "' where Food_Name = '" + Food_Name + "'";

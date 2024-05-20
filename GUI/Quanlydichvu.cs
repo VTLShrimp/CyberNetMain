@@ -187,8 +187,6 @@ namespace CyberNet.GUI
                 }
                 else
                 {
-
-
                     foodBUS.updatestatus(foodName, "On Menu");
                     dbFood.DataSource = foodBUS.loadFood();
                     Dinhdangmenu();
@@ -199,7 +197,23 @@ namespace CyberNet.GUI
 
         private void Timkiembutton_Click(object sender, EventArgs e)
         {
-
+          
+            DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
+            DataProvider provider = new DataProvider();
+           
+            provider.connect();
+            if (cboSearch.Text == "On Menu")
+            {
+                dbFood.DataSource = foodBUS.SreachFood(txtSearch.Text,"On Menu");
+            }
+            else if(cboSearch.Text == "Off Menu")
+            {
+                dbFood.DataSource = foodBUS.SreachFood(txtSearch.Text, "Off Menu");
+            }
+            else
+            {
+                dbFood.DataSource = foodBUS.SreachFoodwithname(txtSearch.Text);
+            }
         }
 
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)

@@ -94,5 +94,11 @@ namespace CyberNet.GUI
                 return;
             }
         }
+
+        private void NewAdmin_Load(object sender, EventArgs e)
+        {
+            OpenChildForm(quanLyMayForm);
+            HighlightButton(Computer_button);
+        }
     }
 }

@@ -19,9 +19,19 @@ namespace CyberNet.BUS
             return foodDAO.loadFood();
         }
 
+        public DataTable SreachFoodwithname(string Food_Name)
+        {
+            return foodDAO.SreachFoodwithname(Food_Name);
+        }
+
         public DataTable loadfoodstatus(string Food_Status)
         {
             return foodDAO.loadfoodstatus(Food_Status);
+        }
+
+        public DataTable SreachFood(string Food_Name, string status)
+        {
+            return foodDAO.SreachFood(Food_Name, status);
         }
 
         public void UpdateFood(string Food_Name, string Food_Type, int Food_Price, string Food_Status,DateTime date)

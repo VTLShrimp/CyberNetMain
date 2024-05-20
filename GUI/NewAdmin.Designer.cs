@@ -174,6 +174,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Name = "NewAdmin";
             this.Text = "NewAdmin";
+            this.Load += new System.EventHandler(this.NewAdmin_Load);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.ResumeLayout(false);
