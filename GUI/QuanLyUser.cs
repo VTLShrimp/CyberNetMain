@@ -15,9 +15,9 @@ namespace CyberNet.GUI
     public partial class QuanLyUser : Form
     {
 
-        ThanhVienBUS ThanhVienBUS;
+        
         ThanhVienListBUS ThanhVienListBUS;
-        LichSuBUS lichSuBUS;
+       
         public QuanLyUser()
         {
             InitializeComponent();
@@ -102,7 +102,7 @@ namespace CyberNet.GUI
             DataProvider provider = new DataProvider();
             provider.connect();
             ThanhVienListBUS = new ThanhVienListBUS();
-            lichSuBUS = new LichSuBUS();
+          
             dgThanhvien.DataSource = ThanhVienListBUS.LoadThanhVien();
             DataGridViewSelectedCellCollection cell = dgThanhvien.SelectedCells;
             if (cell.Count > 0)

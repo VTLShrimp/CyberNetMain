@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CyberNet.BUS;
+using Lap6.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,101 +15,194 @@ namespace CyberNet.GUI
     public partial class Quanlydichvu : Form
     {
         private DataTable dataTable;
+        FoodBUS foodBUS ;
+
         public Quanlydichvu()
         {
             InitializeComponent();
-            InitializeDataTable();
-        }
-        private void InitializeDataTable()
-        {
-            dataTable = new DataTable();
-            dataTable.Columns.Add("Name", typeof(string));
-            dataTable.Columns.Add("Loai", typeof(int));
-            dataTable.Columns.Add("Gia", typeof(int));
-            dataTable.Columns.Add("Soluong", typeof(int));
-            // Gắn DataTable với dataGridView1
-            dataGridView1.DataSource = dataTable;
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
+            dbFood.CellEndEdit += dbFood_CellEndEdit;
+            dbFood.CellBeginEdit += dbFood_CellBeginEdit;
 
         }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        
+        private void Dinhdangluoi()
         {
+            dbFood.ColumnHeadersHeight = 40;
+            dbFood.Columns[0].HeaderText = "Tên dịch vụ";
+            dbFood.Columns[1].HeaderText = "Loại dịch vụ";
+            dbFood.Columns[2].HeaderText = "Giá dịch vụ";
+            dbFood.Columns[3].HeaderText = "Tình trạng";
+            dbFood.Columns[4].HeaderText = "Ngày cập nhật";
+            dbFood.Columns[0].Width = 100;
+            dbFood.Columns[1].Width = 100;
+            dbFood.Columns[2].Width = 150;
+            dbFood.Columns[3].Width = 100;
+            dbFood.Columns[4].Width = 100;
+            
+        }
+
+
+        private void Dinhdangmenu()
+        {
+            dbMenu.DataSource = foodBUS.loadfoodstatus("On Menu");
+            dbMenu.ColumnHeadersHeight = 40;
+            dbMenu.AutoGenerateColumns = false;
+
+            dbMenu.Columns.Clear();
+            
+            var column1 = new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Food_Name",
+                HeaderText = "Tên dịch vụ",
+                Width = 100
+            };
+
+            var column2 = new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Food_Price",
+                HeaderText = "Giá dịch vụ",
+                Width = 150
+            };
+
+            // Add the columns to the collection
+            dbMenu.Columns.Add(column1);
+            dbMenu.Columns.Add(column2);
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void Quanlydichvu_Load(object sender, EventArgs e)
+        {
+            DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
+            DataProvider provider = new DataProvider();
+            provider.connect();
+            foodBUS = new FoodBUS();
+            dbFood.DataSource = foodBUS.loadFood();
+            dbFood.ReadOnly = true;
+            Dinhdangluoi();
+            Dinhdangmenu();
         }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
+       
+        private void dbFood_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+           
+            DataGridViewRow row = dbFood.Rows[e.RowIndex];
 
-        }
+           
+            string foodName = row.Cells["Food_Name"].Value.ToString();
+            string foodType = row.Cells["Food_Type"].Value.ToString();
+            int foodPrice = int.Parse(row.Cells["Food_Price"].Value.ToString());
+            string foodStatus = row.Cells["Food_Status"].Value.ToString();
+            DateTime updatedDate = DateTime.Parse(row.Cells["Updated_Date"].Value.ToString());
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
+           
+            foodBUS.UpdateFood(foodName, foodType, foodPrice, foodStatus, updatedDate);
 
+            dbFood.DataSource = foodBUS.loadFood();
         }
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            // Thêm một hàng mới với dữ liệu từ các TextBox
-            dataTable.Rows.Add(int.Parse(txtFoodName.Text), textBox7.Text, int.Parse(txtPriceUnitOfFood.Text), int.Parse(txtInventoryNumberOfFood.Text));
-            // Xóa dữ liệu từ các TextBox sau khi thêm
-            txtFoodName.Clear();
-            textBox7.Clear();
-            txtPriceUnitOfFood.Clear();
-            txtInventoryNumberOfFood.Clear();
+            AddFood addFood = new AddFood();
+            addFood.ShowDialog();
         }
 
-        private void cboFoodCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dbFood_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            // Hiển thị thông tin của hàng được chọn trong các TextBox
-            if (dataGridView1.SelectedCells.Count > 0)
+            DataGridViewRow row = dbFood.Rows[e.RowIndex];
+
+
+            if (row.ReadOnly)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
-                txtFoodName.Text = selectedRow.Cells["Name"].Value.ToString();
-                textBox7.Text = selectedRow.Cells["Loai"].Value.ToString();
-                txtPriceUnitOfFood.Text = selectedRow.Cells["Gia"].Value.ToString();
-                txtInventoryNumberOfFood.Text = selectedRow.Cells["Soluong"].Value.ToString();
+                
+                e.Cancel = true;
             }
         }
 
         private void btnsua3_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            DialogResult result = MessageBox.Show("Ban co chac chan muon sua khong", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
             {
-                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                dataGridView1.Rows[selectedRowIndex].Cells["Name"].Value = int.Parse(txtFoodName.Text);
-                dataGridView1.Rows[selectedRowIndex].Cells["Loai"].Value = textBox7.Text;
-                dataGridView1.Rows[selectedRowIndex].Cells["Gia"].Value = int.Parse(txtPriceUnitOfFood.Text);
-                dataGridView1.Rows[selectedRowIndex].Cells["Soluong"].Value = int.Parse(txtInventoryNumberOfFood.Text);
+                return;
+            }
+            else
+            {
+                DataGridViewRow selectedRow = dbFood.SelectedRows[0];
+                selectedRow.ReadOnly = false;
             }
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            DialogResult a = MessageBox.Show("Ban co chac chan muon xoa khong", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (a == DialogResult.No)
             {
-                if (!row.IsNewRow)
+                return;
+            }
+            else
+            {
+                DataGridViewSelectedCellCollection cell = dbFood.SelectedCells;
+                if (cell.Count > 0)
                 {
-                    dataGridView1.Rows.Remove(row);
+                    DataGridViewRow row = dbFood.Rows[cell[0].RowIndex];
+                    string TenTaiKhoan = row.Cells["User_Name"].Value.ToString();
+                    foodBUS.DeleteFood(TenTaiKhoan);
+                    dbFood.DataSource = foodBUS.loadFood();
                 }
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void dbFood_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = dbFood.SelectedRows[0];
+            string foodName = selectedRow.Cells["Food_Name"].Value.ToString();
+            string status = selectedRow.Cells["Food_Status"].Value.ToString();
+            DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
+            DataProvider provider = new DataProvider();
+            provider.connect();
+            if (status == "On Menu")
+            {
+                DialogResult result = MessageBox.Show("Ban co chac chan muon xoa khoi menu khong", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+
+                    foodBUS.updatestatus(foodName, "Off Menu");
+                    dbFood.DataSource = foodBUS.loadFood();  
+                    Dinhdangmenu();
+
+                }
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Ban co chac chan muon them vao menu khong", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+
+
+                    foodBUS.updatestatus(foodName, "On Menu");
+                    dbFood.DataSource = foodBUS.loadFood();
+                    Dinhdangmenu();
+
+                }
+            }
+        }
+
+        private void Timkiembutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
