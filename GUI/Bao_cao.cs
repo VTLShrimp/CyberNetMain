@@ -110,8 +110,8 @@ namespace CyberNet.GUI
             listViewReport.GridLines = true;
             listViewReport.Columns.Add("Mã Tài Khoản", 80, HorizontalAlignment.Left);
             listViewReport.Columns.Add("Mã Máy", 50, HorizontalAlignment.Left);
-            listViewReport.Columns.Add("Thời Gian Đăng Nhập", 150, HorizontalAlignment.Left);
-            listViewReport.Columns.Add("Thời Gian Đăng Xuất", 150, HorizontalAlignment.Left);
+            listViewReport.Columns.Add("Thời Gian Đăng Nhập", 130, HorizontalAlignment.Left);
+            listViewReport.Columns.Add("Thời Gian Đăng Xuất", 140, HorizontalAlignment.Left);
             listViewReport.Columns.Add("Tổng Thời Gian", 100, HorizontalAlignment.Left);
             listViewReport.Columns.Add("Gía Tiền", 100, HorizontalAlignment.Left);
             listViewReport.ItemSelectionChanged += ListViewReport_ItemSelectionChanged;

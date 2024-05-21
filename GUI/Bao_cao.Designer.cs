@@ -162,21 +162,23 @@ namespace CyberNet.GUI
             // 
             // cbnam
             // 
+            this.cbnam.Enabled = false;
             this.cbnam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbnam.FormattingEnabled = true;
             this.cbnam.Location = new System.Drawing.Point(39, 146);
             this.cbnam.Name = "cbnam";
-            this.cbnam.Size = new System.Drawing.Size(130, 28);
+            this.cbnam.Size = new System.Drawing.Size(161, 28);
             this.cbnam.TabIndex = 37;
             this.cbnam.Text = "Chọn Năm";
             // 
             // cbthang
             // 
+            this.cbthang.Enabled = false;
             this.cbthang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbthang.FormattingEnabled = true;
             this.cbthang.Location = new System.Drawing.Point(39, 82);
             this.cbthang.Name = "cbthang";
-            this.cbthang.Size = new System.Drawing.Size(130, 28);
+            this.cbthang.Size = new System.Drawing.Size(161, 28);
             this.cbthang.TabIndex = 36;
             this.cbthang.Text = "Chọn Tháng";
             // 
