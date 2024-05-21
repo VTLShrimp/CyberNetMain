@@ -81,7 +81,7 @@ namespace CyberNet.DTO
 
         public void SearchThanhVien(string User_Name)
         {
-            string sql = "select * from Customer_List where User_Name = '" + User_Name + "'";
+            string sql = "select * from Customer_List where User_Name LIKE '%" + User_Name + "%'";
             dataProvider.executeQuery(sql);
         }
     }

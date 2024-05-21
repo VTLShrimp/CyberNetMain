@@ -53,7 +53,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1100, 84);
+            this.guna2Panel2.Size = new System.Drawing.Size(1193, 84);
             this.guna2Panel2.TabIndex = 1;
             // 
             // Log_out_Button
@@ -68,7 +68,7 @@
             this.Log_out_Button.ForeColor = System.Drawing.Color.White;
             this.Log_out_Button.Image = ((System.Drawing.Image)(resources.GetObject("Log_out_Button.Image")));
             this.Log_out_Button.ImageSize = new System.Drawing.Size(70, 70);
-            this.Log_out_Button.Location = new System.Drawing.Point(987, 0);
+            this.Log_out_Button.Location = new System.Drawing.Point(1080, 0);
             this.Log_out_Button.Name = "Log_out_Button";
             this.Log_out_Button.Size = new System.Drawing.Size(113, 84);
             this.Log_out_Button.TabIndex = 5;
@@ -156,22 +156,25 @@
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 84);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1100, 604);
+            this.guna2Panel3.Size = new System.Drawing.Size(1193, 672);
             this.guna2Panel3.TabIndex = 2;
             // 
             // NewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 688);
+            this.ClientSize = new System.Drawing.Size(1193, 757);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Name = "NewAdmin";
             this.Text = "NewAdmin";
+            this.Load += new System.EventHandler(this.NewAdmin_Load);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.ResumeLayout(false);

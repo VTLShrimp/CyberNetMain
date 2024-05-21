@@ -28,61 +28,225 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quanlydichvu));
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.picSearch = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboSearch = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnthem = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dbMenu = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dbFood = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnsua3 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtInventoryNumberOfFood = new System.Windows.Forms.TextBox();
-            this.txtPriceUnitOfFood = new System.Windows.Forms.TextBox();
-            this.txtFoodName = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Timkiembutton = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbFood)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox3
+            // guna2Panel1
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(27, 31);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(325, 255);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 54;
-            this.pictureBox3.TabStop = false;
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.dbMenu);
+            this.guna2Panel1.Controls.Add(this.dbFood);
+            this.guna2Panel1.Controls.Add(this.btnsua3);
+            this.guna2Panel1.Controls.Add(this.btnxoa);
+            this.guna2Panel1.Controls.Add(this.btnthem);
+            this.guna2Panel1.Controls.Add(this.groupBox1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1175, 625);
+            this.guna2Panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(757, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Menu :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(115, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 16);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Danh sách món ăn";
+            // 
+            // dbMenu
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dbMenu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dbMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dbMenu.ColumnHeadersHeight = 4;
+            this.dbMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dbMenu.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dbMenu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dbMenu.Location = new System.Drawing.Point(760, 83);
+            this.dbMenu.Name = "dbMenu";
+            this.dbMenu.RowHeadersVisible = false;
+            this.dbMenu.RowHeadersWidth = 51;
+            this.dbMenu.RowTemplate.Height = 24;
+            this.dbMenu.Size = new System.Drawing.Size(284, 358);
+            this.dbMenu.TabIndex = 73;
+            this.dbMenu.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dbMenu.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dbMenu.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dbMenu.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dbMenu.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dbMenu.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dbMenu.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dbMenu.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dbMenu.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dbMenu.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dbMenu.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dbMenu.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dbMenu.ThemeStyle.HeaderStyle.Height = 4;
+            this.dbMenu.ThemeStyle.ReadOnly = false;
+            this.dbMenu.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dbMenu.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dbMenu.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dbMenu.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dbMenu.ThemeStyle.RowsStyle.Height = 24;
+            this.dbMenu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dbMenu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // dbFood
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dbFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dbFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dbFood.ColumnHeadersHeight = 4;
+            this.dbFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dbFood.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dbFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dbFood.Location = new System.Drawing.Point(114, 83);
+            this.dbFood.Name = "dbFood";
+            this.dbFood.RowHeadersVisible = false;
+            this.dbFood.RowHeadersWidth = 51;
+            this.dbFood.RowTemplate.Height = 24;
+            this.dbFood.Size = new System.Drawing.Size(613, 358);
+            this.dbFood.TabIndex = 72;
+            this.dbFood.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dbFood.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dbFood.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dbFood.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dbFood.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dbFood.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dbFood.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dbFood.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dbFood.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dbFood.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dbFood.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dbFood.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dbFood.ThemeStyle.HeaderStyle.Height = 4;
+            this.dbFood.ThemeStyle.ReadOnly = false;
+            this.dbFood.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dbFood.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dbFood.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dbFood.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dbFood.ThemeStyle.RowsStyle.Height = 24;
+            this.dbFood.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dbFood.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dbFood.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbFood_CellDoubleClick);
+            // 
+            // btnsua3
+            // 
+            this.btnsua3.Location = new System.Drawing.Point(964, 474);
+            this.btnsua3.Name = "btnsua3";
+            this.btnsua3.Size = new System.Drawing.Size(96, 96);
+            this.btnsua3.TabIndex = 71;
+            this.btnsua3.Text = "Sửa";
+            this.btnsua3.UseVisualStyleBackColor = true;
+            this.btnsua3.Click += new System.EventHandler(this.btnsua3_Click);
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.Location = new System.Drawing.Point(862, 474);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(96, 96);
+            this.btnxoa.TabIndex = 70;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+            // 
+            // btnthem
+            // 
+            this.btnthem.Location = new System.Drawing.Point(760, 474);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(96, 96);
+            this.btnthem.TabIndex = 69;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.Timkiembutton);
             this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Controls.Add(this.picSearch);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cboSearch);
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(4, 388);
+            this.groupBox1.Location = new System.Drawing.Point(92, 462);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(755, 108);
-            this.groupBox1.TabIndex = 59;
+            this.groupBox1.Size = new System.Drawing.Size(661, 108);
+            this.groupBox1.TabIndex = 68;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // Timkiembutton
+            // 
+            this.Timkiembutton.Location = new System.Drawing.Point(26, 68);
+            this.Timkiembutton.Name = "Timkiembutton";
+            this.Timkiembutton.Size = new System.Drawing.Size(155, 33);
+            this.Timkiembutton.TabIndex = 68;
+            this.Timkiembutton.Text = "Tìm kiếm";
+            this.Timkiembutton.UseVisualStyleBackColor = true;
+            this.Timkiembutton.Click += new System.EventHandler(this.Timkiembutton_Click);
             // 
             // txtSearch
             // 
@@ -91,31 +255,8 @@
             this.txtSearch.Location = new System.Drawing.Point(23, 23);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(519, 30);
+            this.txtSearch.Size = new System.Drawing.Size(390, 30);
             this.txtSearch.TabIndex = 28;
-            // 
-            // picSearch
-            // 
-            this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSearch.Location = new System.Drawing.Point(589, 23);
-            this.picSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(105, 78);
-            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSearch.TabIndex = 27;
-            this.picSearch.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Blue;
-            this.label10.Location = new System.Drawing.Point(88, 69);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 24);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Theo";
             // 
             // cboSearch
             // 
@@ -123,228 +264,49 @@
             this.cboSearch.ForeColor = System.Drawing.Color.Red;
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Items.AddRange(new object[] {
-            "Tên Sản Phẩm",
-            "Mã"});
-            this.cboSearch.Location = new System.Drawing.Point(152, 68);
+            "ALL",
+            "Off Menu",
+            "On Menu",
+            ""});
+            this.cboSearch.Location = new System.Drawing.Point(470, 27);
             this.cboSearch.Margin = new System.Windows.Forms.Padding(4);
             this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(389, 28);
+            this.cboSearch.Size = new System.Drawing.Size(124, 28);
             this.cboSearch.TabIndex = 10;
-            this.cboSearch.Text = "Tên Sản Phẩm";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox2.Location = new System.Drawing.Point(4, 517);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1083, 158);
-            this.groupBox2.TabIndex = 60;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin chi tiết";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1042, 135);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // btnthem
-            // 
-            this.btnthem.Location = new System.Drawing.Point(770, 399);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(96, 96);
-            this.btnthem.TabIndex = 61;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.Location = new System.Drawing.Point(872, 399);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(96, 96);
-            this.btnxoa.TabIndex = 62;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.UseVisualStyleBackColor = true;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-            // 
-            // btnsua3
-            // 
-            this.btnsua3.Location = new System.Drawing.Point(974, 399);
-            this.btnsua3.Name = "btnsua3";
-            this.btnsua3.Size = new System.Drawing.Size(96, 96);
-            this.btnsua3.TabIndex = 63;
-            this.btnsua3.Text = "Sửa";
-            this.btnsua3.UseVisualStyleBackColor = true;
-            this.btnsua3.Click += new System.EventHandler(this.btnsua3_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Location = new System.Drawing.Point(527, 122);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(332, 30);
-            this.textBox7.TabIndex = 72;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Navy;
-            this.label12.Location = new System.Drawing.Point(405, 244);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(117, 24);
-            this.label12.TabIndex = 71;
-            this.label12.Text = "Số lượng tồn";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Navy;
-            this.label13.Location = new System.Drawing.Point(405, 187);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 24);
-            this.label13.TabIndex = 70;
-            this.label13.Text = "Đơn giá";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Navy;
-            this.label14.Location = new System.Drawing.Point(405, 122);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 24);
-            this.label14.TabIndex = 69;
-            this.label14.Text = "Thuộc loại";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Navy;
-            this.label15.Location = new System.Drawing.Point(405, 60);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 24);
-            this.label15.TabIndex = 68;
-            this.label15.Text = "Tên gọi";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Lime;
-            this.label16.Location = new System.Drawing.Point(867, 185);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 24);
-            this.label16.TabIndex = 67;
-            this.label16.Text = "USD";
-            // 
-            // txtInventoryNumberOfFood
-            // 
-            this.txtInventoryNumberOfFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInventoryNumberOfFood.Location = new System.Drawing.Point(527, 244);
-            this.txtInventoryNumberOfFood.Margin = new System.Windows.Forms.Padding(4);
-            this.txtInventoryNumberOfFood.Multiline = true;
-            this.txtInventoryNumberOfFood.Name = "txtInventoryNumberOfFood";
-            this.txtInventoryNumberOfFood.Size = new System.Drawing.Size(332, 30);
-            this.txtInventoryNumberOfFood.TabIndex = 66;
-            // 
-            // txtPriceUnitOfFood
-            // 
-            this.txtPriceUnitOfFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPriceUnitOfFood.Location = new System.Drawing.Point(527, 187);
-            this.txtPriceUnitOfFood.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPriceUnitOfFood.Multiline = true;
-            this.txtPriceUnitOfFood.Name = "txtPriceUnitOfFood";
-            this.txtPriceUnitOfFood.Size = new System.Drawing.Size(332, 30);
-            this.txtPriceUnitOfFood.TabIndex = 65;
-            // 
-            // txtFoodName
-            // 
-            this.txtFoodName.BackColor = System.Drawing.Color.White;
-            this.txtFoodName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFoodName.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtFoodName.Location = new System.Drawing.Point(527, 60);
-            this.txtFoodName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFoodName.Multiline = true;
-            this.txtFoodName.Name = "txtFoodName";
-            this.txtFoodName.Size = new System.Drawing.Size(332, 30);
-            this.txtFoodName.TabIndex = 64;
+            this.cboSearch.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
             // Quanlydichvu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(166)))));
-            this.ClientSize = new System.Drawing.Size(1100, 688);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.txtInventoryNumberOfFood);
-            this.Controls.Add(this.txtPriceUnitOfFood);
-            this.Controls.Add(this.txtFoodName);
-            this.Controls.Add(this.btnsua3);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.btnxoa);
-            this.Controls.Add(this.btnthem);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
+            this.ClientSize = new System.Drawing.Size(1175, 625);
+            this.Controls.Add(this.guna2Panel1);
             this.Name = "Quanlydichvu";
-            this.Text = "Quanlydichvu";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Load += new System.EventHandler(this.Quanlydichvu_Load);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbFood)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.PictureBox picSearch;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboSearch;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnthem;
-        private System.Windows.Forms.Button btnxoa;
+
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2DataGridView dbMenu;
+        private Guna.UI2.WinForms.Guna2DataGridView dbFood;
         private System.Windows.Forms.Button btnsua3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtInventoryNumberOfFood;
-        private System.Windows.Forms.TextBox txtPriceUnitOfFood;
-        private System.Windows.Forms.TextBox txtFoodName;
+        private System.Windows.Forms.Button btnxoa;
+        private System.Windows.Forms.Button btnthem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Timkiembutton;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
     }
 }
