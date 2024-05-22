@@ -20,6 +20,7 @@ namespace CyberNet
             StartPosition = FormStartPosition.CenterScreen;
         }
 
+        public string Username { get; set; }
         private void Login_Load(object sender, EventArgs e)
         {
            
@@ -43,16 +44,35 @@ namespace CyberNet
                     string username = UserText.Text;
                     string password = PassWordTextBox.Text;
                     string checkAccout = "select * from Customer_Accout where User_Name = '" + username + "' and Password = '" + password + "'";
+                    string checkAdmin = "select * from Customer_Accout where User_Name = '" + username + "' and Password = '" + password + "' and Type = '"+"Admin"+"'";    
                     SqlDataAdapter adapter = new SqlDataAdapter(checkAccout, Connetdata);
                     DataSet data = new DataSet();
                     adapter.Fill(data, "Customer_Accout");
                     DataTable dt = data.Tables["Customer_Accout"];
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("Dang nhap thanh cong", "Thong bao", MessageBoxButtons.OK);
-                        NewAdmin list = new NewAdmin();
-                        list.Show();
-                        Hide();
+                        data.Dispose();
+                        adapter.Dispose();
+                        adapter = new SqlDataAdapter(checkAdmin, Connetdata);
+                        data = new DataSet();
+                        adapter.Fill(data, "Admin_Accout");
+                        dt = data.Tables["Admin_Accout"];
+                        if (dt.Rows.Count > 0)
+                        {
+                            MessageBox.Show("Dang nhap Admin thanh cong", "Thong bao", MessageBoxButtons.OK);
+                            NewAdmin list = new NewAdmin();
+                            list.Show();
+                            Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Dang nhap thanh cong", "Thong bao", MessageBoxButtons.OK);
+                            User list = new User();
+                            list.UserName = username;
+                            list.Show();
+                            Hide();
+                        }
+                   
                     }
                     else
                     {

@@ -8,7 +8,7 @@ namespace CyberNet.GUI
 {
     public partial class Bao_cao : Form
     {
-        private const string connectionString = "Data Source=NNVHG\\SQLEXPRESS;Initial Catalog=QLcybernet;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private const string connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
 
         public Bao_cao()
         {
@@ -323,5 +323,14 @@ namespace CyberNet.GUI
             }
         }
 
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnxem_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

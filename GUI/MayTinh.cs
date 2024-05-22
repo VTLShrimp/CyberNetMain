@@ -12,7 +12,7 @@ namespace CyberNet.GUI
 {
     public partial class MayTinh : UserControl
     {
-        private Admin admin;
+       
         private int counter = 0;
 
         public MayTinh()
@@ -34,8 +34,7 @@ namespace CyberNet.GUI
 
         private void button_Click(object sender, EventArgs e)
         {
-            admin = new Admin();
-
+            
             if (button.Text == "Bật máy")
             {
                 button.Text = "Tắt máy";
@@ -60,7 +59,7 @@ namespace CyberNet.GUI
             int seconds = (counter % 60);
             int minutes = (counter / 60) % 60;
             int hours = (counter / 3600);
-            guna2TextBox1.Text = string.Format("        {0:D2}:{1:D2}:{2:D2}", hours, minutes, seconds);
+            guna2TextBox1.Text = string.Format("      {0:D2}:{1:D2}:{2:D2}", hours, minutes, seconds);
         }
     }
     

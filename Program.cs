@@ -17,7 +17,7 @@ namespace CyberNet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Bao_cao());
+            Application.Run(new Login());
         }
     }
 }

@@ -84,5 +84,11 @@ namespace CyberNet.DTO
             string sql = "select * from Customer_List where User_Name LIKE '%" + User_Name + "%'";
             dataProvider.executeQuery(sql);
         }
+
+        public DataTable SreachMoney(string User_Name)
+        {
+            string sql = "select money from Customer_List where User_Name = '"+User_Name+"'";
+            return dataProvider.executeQuery(sql);
+        }
     }
 }

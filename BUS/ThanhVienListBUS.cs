@@ -36,6 +36,11 @@ namespace CyberNet.BUS
 
         }
 
+        public DataTable SreachMoney(string User_name)
+        {
+            return thanhVienListDAO.SreachMoney(User_name);
+        }
+
         public void Recharge(string User_Name, int money)
         {
             thanhVienListDAO.Recharge(User_Name, money);

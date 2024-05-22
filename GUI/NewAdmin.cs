@@ -16,7 +16,7 @@ namespace CyberNet.GUI
     {
         private QuanLyMay quanLyMayForm = new QuanLyMay();
         private QuanLyUser quanLyUserForm = new QuanLyUser();
-        private StaticView staticView = new StaticView();   
+        private Bao_cao bao_Cao = new Bao_cao(); 
         private Quanlydichvu chatView = new Quanlydichvu(); 
         public NewAdmin()
         {
@@ -78,8 +78,9 @@ namespace CyberNet.GUI
 
         private void Static_button_Click(object sender, EventArgs e)
         {
-            
-            OpenChildForm(staticView);
+
+            OpenChildForm(bao_Cao);
+            HighlightButton(Static_button);
         }
 
         private void Log_out_Button_Click(object sender, EventArgs e)

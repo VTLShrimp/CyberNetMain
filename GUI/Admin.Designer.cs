@@ -133,7 +133,7 @@
             this.tpnangcap.Location = new System.Drawing.Point(4, 27);
             this.tpnangcap.Name = "tpnangcap";
             this.tpnangcap.Padding = new System.Windows.Forms.Padding(3);
-            this.tpnangcap.Size = new System.Drawing.Size(1023, 594);
+            this.tpnangcap.Size = new System.Drawing.Size(1023, 592);
             this.tpnangcap.TabIndex = 5;
             this.tpnangcap.Text = "Ứng dụng";
             this.tpnangcap.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@
             this.tpmenu.Location = new System.Drawing.Point(4, 27);
             this.tpmenu.Name = "tpmenu";
             this.tpmenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpmenu.Size = new System.Drawing.Size(1023, 594);
+            this.tpmenu.Size = new System.Drawing.Size(1023, 592);
             this.tpmenu.TabIndex = 4;
             this.tpmenu.Text = "Menu";
             this.tpmenu.UseVisualStyleBackColor = true;
@@ -154,7 +154,7 @@
             this.tpyeucau.Location = new System.Drawing.Point(4, 27);
             this.tpyeucau.Name = "tpyeucau";
             this.tpyeucau.Padding = new System.Windows.Forms.Padding(3);
-            this.tpyeucau.Size = new System.Drawing.Size(1023, 594);
+            this.tpyeucau.Size = new System.Drawing.Size(1023, 592);
             this.tpyeucau.TabIndex = 3;
             this.tpyeucau.Text = "Yêu Cầu";
             this.tpyeucau.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             this.tpthanhvien.Location = new System.Drawing.Point(4, 27);
             this.tpthanhvien.Name = "tpthanhvien";
             this.tpthanhvien.Padding = new System.Windows.Forms.Padding(3);
-            this.tpthanhvien.Size = new System.Drawing.Size(1023, 594);
+            this.tpthanhvien.Size = new System.Drawing.Size(1023, 592);
             this.tpthanhvien.TabIndex = 1;
             this.tpthanhvien.Text = "Thành Viên";
             this.tpthanhvien.UseVisualStyleBackColor = true;

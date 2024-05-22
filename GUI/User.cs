@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CyberNet.BUS;
+using Lap6.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace CyberNet.GUI
 {
     public partial class User : Form
     {
+        DataProvider dataProvider;
+        ThanhVienListBUS ThanhVienListBUS;
+        public string UserName { get; set; }
         public User()
         {
             InitializeComponent();
@@ -60,6 +65,29 @@ namespace CyberNet.GUI
         }
 
         private void panel_body_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void User_Load(object sender, EventArgs e)
+        {
+            guna2GroupBox1.Text = "Người dùng : "+UserName;
+            dataProvider = new DataProvider();
+            
+            
+        }
+
+        private void panel_body_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

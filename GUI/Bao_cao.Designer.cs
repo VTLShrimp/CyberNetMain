@@ -51,21 +51,23 @@ namespace CyberNet.GUI
             this.rbtndoanhthungay = new System.Windows.Forms.RadioButton();
             this.listViewReport = new System.Windows.Forms.ListView();
             this.chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartReport)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txttimkiem
             // 
             this.txttimkiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttimkiem.Location = new System.Drawing.Point(449, 16);
+            this.txttimkiem.Location = new System.Drawing.Point(513, 41);
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(261, 22);
             this.txttimkiem.TabIndex = 26;
             // 
             // btntimkiem
             // 
-            this.btntimkiem.Location = new System.Drawing.Point(716, 14);
+            this.btntimkiem.Location = new System.Drawing.Point(782, 39);
             this.btntimkiem.Name = "btntimkiem";
             this.btntimkiem.Size = new System.Drawing.Size(91, 26);
             this.btntimkiem.TabIndex = 25;
@@ -79,7 +81,7 @@ namespace CyberNet.GUI
             this.cbtuychon.Items.AddRange(new object[] {
             "Danh sách",
             "Biểu đồ"});
-            this.cbtuychon.Location = new System.Drawing.Point(14, 14);
+            this.cbtuychon.Location = new System.Drawing.Point(82, 39);
             this.cbtuychon.Name = "cbtuychon";
             this.cbtuychon.Size = new System.Drawing.Size(121, 24);
             this.cbtuychon.TabIndex = 23;
@@ -111,7 +113,7 @@ namespace CyberNet.GUI
             // 
             this.txttong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txttong.Enabled = false;
-            this.txttong.Location = new System.Drawing.Point(70, 354);
+            this.txttong.Location = new System.Drawing.Point(129, 379);
             this.txttong.Name = "txttong";
             this.txttong.Size = new System.Drawing.Size(182, 22);
             this.txttong.TabIndex = 29;
@@ -119,7 +121,7 @@ namespace CyberNet.GUI
             // lable1
             // 
             this.lable1.AutoSize = true;
-            this.lable1.Location = new System.Drawing.Point(14, 356);
+            this.lable1.Location = new System.Drawing.Point(79, 381);
             this.lable1.Name = "lable1";
             this.lable1.Size = new System.Drawing.Size(45, 16);
             this.lable1.TabIndex = 28;
@@ -128,7 +130,7 @@ namespace CyberNet.GUI
             // lvchitiet
             // 
             this.lvchitiet.HideSelection = false;
-            this.lvchitiet.Location = new System.Drawing.Point(14, 389);
+            this.lvchitiet.Location = new System.Drawing.Point(80, 422);
             this.lvchitiet.Name = "lvchitiet";
             this.lvchitiet.Size = new System.Drawing.Size(1005, 164);
             this.lvchitiet.TabIndex = 27;
@@ -143,7 +145,7 @@ namespace CyberNet.GUI
             this.groupBox1.Controls.Add(this.rbtndoanhthuthang);
             this.groupBox1.Controls.Add(this.rbtndoanhthungay);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(817, 55);
+            this.groupBox1.Location = new System.Drawing.Point(883, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(206, 293);
             this.groupBox1.TabIndex = 24;
@@ -159,6 +161,7 @@ namespace CyberNet.GUI
             this.btnxem.TabIndex = 34;
             this.btnxem.Text = "Xem Báo Cáo";
             this.btnxem.UseVisualStyleBackColor = true;
+            this.btnxem.Click += new System.EventHandler(this.btnxem_Click_1);
             // 
             // cbnam
             // 
@@ -194,7 +197,7 @@ namespace CyberNet.GUI
             // listViewReport
             // 
             this.listViewReport.HideSelection = false;
-            this.listViewReport.Location = new System.Drawing.Point(12, 55);
+            this.listViewReport.Location = new System.Drawing.Point(80, 80);
             this.listViewReport.Name = "listViewReport";
             this.listViewReport.Size = new System.Drawing.Size(797, 293);
             this.listViewReport.TabIndex = 22;
@@ -206,7 +209,7 @@ namespace CyberNet.GUI
             this.chartReport.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartReport.Legends.Add(legend2);
-            this.chartReport.Location = new System.Drawing.Point(14, 55);
+            this.chartReport.Location = new System.Drawing.Point(82, 80);
             this.chartReport.Name = "chartReport";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -216,28 +219,39 @@ namespace CyberNet.GUI
             this.chartReport.TabIndex = 33;
             this.chartReport.Text = "chart1";
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.lable1);
+            this.guna2Panel1.Controls.Add(this.txttong);
+            this.guna2Panel1.Controls.Add(this.chartReport);
+            this.guna2Panel1.Controls.Add(this.btntimkiem);
+            this.guna2Panel1.Controls.Add(this.listViewReport);
+            this.guna2Panel1.Controls.Add(this.lvchitiet);
+            this.guna2Panel1.Controls.Add(this.txttimkiem);
+            this.guna2Panel1.Controls.Add(this.groupBox1);
+            this.guna2Panel1.Controls.Add(this.cbtuychon);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1175, 625);
+            this.guna2Panel1.TabIndex = 34;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
             // Bao_cao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 568);
-            this.Controls.Add(this.chartReport);
-            this.Controls.Add(this.txttimkiem);
-            this.Controls.Add(this.btntimkiem);
-            this.Controls.Add(this.cbtuychon);
-            this.Controls.Add(this.txttong);
-            this.Controls.Add(this.lable1);
-            this.Controls.Add(this.lvchitiet);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listViewReport);
+            this.ClientSize = new System.Drawing.Size(1175, 625);
+            this.Controls.Add(this.guna2Panel1);
             this.Name = "Bao_cao";
             this.Text = "Bao_cao";
             this.Load += new System.EventHandler(this.Bao_cao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartReport)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -258,5 +272,6 @@ namespace CyberNet.GUI
         private System.Windows.Forms.ComboBox cbthang;
         private System.Windows.Forms.ComboBox cbnam;
         private System.Windows.Forms.Button btnxem;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
