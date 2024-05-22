@@ -16,21 +16,11 @@ namespace CyberNet.GUI
             InitializeListViewReport();
             InitializeListViewChiTiet();
 
-            // Gán sự kiện CheckedChanged cho các RadioButton
             rbtndoanhthungay.CheckedChanged += RadioButton_CheckedChanged;
             rbtndoanhthuthang.CheckedChanged += RadioButton_CheckedChanged;
             rbtndoanhthunam.CheckedChanged += RadioButton_CheckedChanged;
-
-            // Mặc định chọn radiobutton ngày
-            rbtndoanhthungay.Checked = true;
-
-            // Gán sự kiện Click cho nút btnxem
             btnxem.Click += btnxem_Click;
-
-            // Gán sự kiện SelectedIndexChanged cho cbtuychon
             cbtuychon.SelectedIndexChanged += cbtuychon_SelectedIndexChanged;
-
-            // Đặt tùy chọn mặc định là "Danh sách"
             cbtuychon.SelectedIndex = 0;
         }
 
@@ -42,75 +32,68 @@ namespace CyberNet.GUI
 
         private void btnxem_Click(object sender, EventArgs e)
         {
-            // Xóa các mục hiện tại trong listViewReport để chuẩn bị cho việc cập nhật dữ liệu mới
             listViewReport.Items.Clear();
-
-            // Khởi tạo biến tổng
             double tongGiaTien = 0;
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    // Mở kết nối
                     connection.Open();
 
-                    // Tạo câu truy vấn dựa trên RadioButton được chọn và giá trị từ ComboBox
                     string query = "SELECT * FROM HoatDong WHERE ";
+                    string condition = "";
                     if (rbtndoanhthungay.Checked)
                     {
-                        // Lấy thời gian hiện tại
-                        DateTime currentTime = DateTime.Now;
-                        string currentDate = currentTime.ToString("yyyy-MM-dd");
-
-                        // Thêm điều kiện vào câu truy vấn
-                        query += $"CONVERT(date, ThoiGianDangNhap) = '{currentDate}'";
+                        condition = "CONVERT(date, ThoiGianDangNhap) = @CurrentDate";
                     }
                     else if (rbtndoanhthuthang.Checked)
                     {
-                        // Lấy giá trị tháng từ ComboBox
-                        int thang = int.Parse(cbthang.SelectedItem.ToString());
-
-                        // Thêm điều kiện vào câu truy vấn
-                        query += $"MONTH(ThoiGianDangNhap) = {thang}";
+                        condition = "MONTH(ThoiGianDangNhap) = @Thang";
                     }
                     else if (rbtndoanhthunam.Checked)
                     {
-                        // Lấy giá trị năm từ ComboBox
-                        int nam = int.Parse(cbnam.SelectedItem.ToString());
-
-                        // Thêm điều kiện vào câu truy vấn
-                        query += $"YEAR(ThoiGianDangNhap) = {nam}";
+                        condition = "YEAR(ThoiGianDangNhap) = @Nam";
                     }
 
-                    // Thực hiện truy vấn SQL
+                    query += condition;
+
                     SqlCommand command = new SqlCommand(query, connection);
+                    if (rbtndoanhthungay.Checked)
+                    {
+                        command.Parameters.AddWithValue("@CurrentDate", DateTime.Now.ToString("yyyy-MM-dd"));
+                    }
+                    else if (rbtndoanhthuthang.Checked)
+                    {
+                        command.Parameters.AddWithValue("@Thang", cbthang.SelectedItem.ToString());
+                    }
+                    else if (rbtndoanhthunam.Checked)
+                    {
+                        command.Parameters.AddWithValue("@Nam", cbnam.SelectedItem.ToString());
+                    }
+
                     SqlDataReader reader = command.ExecuteReader();
 
-                    // Đọc dữ liệu và thêm vào listViewReport
-                    while (reader.Read())
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    foreach (DataRow row in dataTable.Rows)
                     {
-                        ListViewItem item = new ListViewItem(reader["MaTaiKhoan"].ToString());
-                        item.SubItems.Add(reader["MaMay"].ToString());
-                        item.SubItems.Add(reader["ThoiGianDangNhap"].ToString());
-                        item.SubItems.Add(reader["ThoiGianDangXuat"].ToString());
-                        item.SubItems.Add(reader["TongThoiGianChoi"].ToString());
-                        string giaTienStr = reader["GiaTien"].ToString();
-                        item.SubItems.Add(giaTienStr);
+                        ListViewItem item = new ListViewItem(row["MaTaiKhoan"].ToString());
+                        for (int i = 1; i < dataTable.Columns.Count; i++)
+                        {
+                            item.SubItems.Add(row[i].ToString());
+                        }
                         listViewReport.Items.Add(item);
-
-                        // Tính tổng giá trị GiaTien
-                        double giaTien = double.Parse(giaTienStr);
-                        tongGiaTien += giaTien;
+                        double giaTien;
+                        if (double.TryParse(row["GiaTien"].ToString(), out giaTien))
+                        {
+                            tongGiaTien += giaTien;
+                        }
                     }
 
-                    // Đóng kết nối
                     connection.Close();
 
-                    // Hiển thị biểu đồ dựa trên dữ liệu từ listViewReport
-                    DisplayChart();
-
-                    // Hiển thị tổng giá trị GiaTien lên txttong
+                    DisplayChart(dataTable);
                     txttong.Text = tongGiaTien.ToString();
                 }
             }
@@ -120,37 +103,29 @@ namespace CyberNet.GUI
             }
         }
 
-
         private void InitializeListViewReport()
         {
-            // Thiết lập các thuộc tính cơ bản cho listViewReport
             listViewReport.View = View.Details;
             listViewReport.FullRowSelect = true;
             listViewReport.GridLines = true;
-
-            // Thêm các cột vào listViewReport
             listViewReport.Columns.Add("Mã Tài Khoản", 80, HorizontalAlignment.Left);
             listViewReport.Columns.Add("Mã Máy", 50, HorizontalAlignment.Left);
-            listViewReport.Columns.Add("Thời Gian Đăng Nhập", 150, HorizontalAlignment.Left);
-            listViewReport.Columns.Add("Thời Gian Đăng Xuất", 150, HorizontalAlignment.Left);
+            listViewReport.Columns.Add("Thời Gian Đăng Nhập", 130, HorizontalAlignment.Left);
+            listViewReport.Columns.Add("Thời Gian Đăng Xuất", 140, HorizontalAlignment.Left);
             listViewReport.Columns.Add("Tổng Thời Gian", 100, HorizontalAlignment.Left);
             listViewReport.Columns.Add("Gía Tiền", 100, HorizontalAlignment.Left);
-
-            // Thêm sự kiện ItemSelectionChanged cho listViewReport
             listViewReport.ItemSelectionChanged += ListViewReport_ItemSelectionChanged;
         }
 
         private void InitializeListViewChiTiet()
         {
-            // Thiết lập các thuộc tính cơ bản cho lvchitiet
             lvchitiet.View = View.Details;
             lvchitiet.FullRowSelect = true;
             lvchitiet.GridLines = true;
-
-            // Thêm các cột vào lvchitiet
             lvchitiet.Columns.Add("Tên Tài Khoản", 100, HorizontalAlignment.Left);
             lvchitiet.Columns.Add("Tên Máy", 100, HorizontalAlignment.Left);
         }
+
         private void ListViewReport_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (e.IsSelected)
@@ -166,10 +141,7 @@ namespace CyberNet.GUI
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    // Mở kết nối
                     connection.Open();
-
-                    // Thực hiện truy vấn SQL với tham số maTaiKhoan
                     string query = "SELECT tk.TenTaiKhoan, m.TenMay " +
                                    "FROM HoatDong hd " +
                                    "JOIN May m ON hd.MaMay = m.MaMay " +
@@ -178,19 +150,13 @@ namespace CyberNet.GUI
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
                     SqlDataReader reader = command.ExecuteReader();
-
-                    // Xóa các mục hiện tại trong lvchitiet
                     lvchitiet.Items.Clear();
-
-                    // Đọc dữ liệu và thêm vào lvchitiet
                     while (reader.Read())
                     {
                         ListViewItem item = new ListViewItem(reader["TenTaiKhoan"].ToString());
                         item.SubItems.Add(reader["TenMay"].ToString());
                         lvchitiet.Items.Add(item);
                     }
-
-                    // Đóng kết nối
                     connection.Close();
                 }
             }
@@ -204,7 +170,6 @@ namespace CyberNet.GUI
         {
             if (cbtuychon.SelectedItem.ToString() == "Danh sách")
             {
-                // Hiển thị listViewReport, btntimkiem, txttimkiem và lvchitiet
                 listViewReport.Visible = true;
                 txttimkiem.Visible = true;
                 btntimkiem.Visible = true;
@@ -213,33 +178,25 @@ namespace CyberNet.GUI
             }
             else if (cbtuychon.SelectedItem.ToString() == "Biểu đồ")
             {
-                // Ẩn listViewReport, btntimkiem, txttimkiem và lvchitiet
                 listViewReport.Visible = false;
                 txttimkiem.Visible = false;
                 btntimkiem.Visible = false;
                 lvchitiet.Visible = false;
                 chartReport.Visible = true;
-
-                // Hiển thị biểu đồ dựa trên dữ liệu từ listViewReport
-                DisplayChart();
             }
         }
-
-        private void DisplayChart()
+        private void DisplayChart(DataTable dataTable)
         {
-            // Xóa dữ liệu cũ của biểu đồ
             chartReport.Series.Clear();
-
-            // Thêm series mới cho biểu đồ
             chartReport.Series.Add("GiaTien");
-
-            // Lặp qua các mục trong listViewReport và thêm dữ liệu vào biểu đồ
-            foreach (ListViewItem item in listViewReport.Items)
+            foreach (DataRow row in dataTable.Rows)
             {
-                string ngay = item.SubItems[2].Text; // Thời gian đăng nhập là cột thứ 3 trong listViewReport
-                double giaTien = double.Parse(item.SubItems[5].Text); // GiaTien là cột thứ 6 trong listViewReport
-
-                chartReport.Series["GiaTien"].Points.AddXY(ngay, giaTien);
+                string ngay = row["ThoiGianDangNhap"].ToString();
+                double giaTien;
+                if (double.TryParse(row["GiaTien"].ToString(), out giaTien))
+                {
+                    chartReport.Series["GiaTien"].Points.AddXY(ngay, giaTien);
+                }
             }
         }
 
@@ -274,23 +231,19 @@ namespace CyberNet.GUI
 
         private void Bao_cao_Load(object sender, EventArgs e)
         {
-            // Thêm các tháng từ 1 đến 12 vào ComboBox tháng
             for (int i = 1; i <= 12; i++)
             {
                 cbthang.Items.Add(i);
             }
 
-            // Xác định năm của lần đăng nhập cũ nhất
             int oldestYear = GetOldestLoginYear();
 
-            // Thêm các năm từ năm cũ nhất đến năm hiện tại vào ComboBox năm
             int currentYear = DateTime.Now.Year;
             for (int year = oldestYear; year <= currentYear; year++)
             {
                 cbnam.Items.Add(year);
             }
 
-            // Đặt tùy chọn mặc định là "Danh sách" nếu có ít nhất một mục trong ComboBox
             if (cbtuychon.Items.Count > 0)
             {
                 cbtuychon.SelectedIndex = 0;
@@ -299,17 +252,14 @@ namespace CyberNet.GUI
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
-            string keyword = txttimkiem.Text.Trim().ToLower(); // Lấy nội dung từ txttimkiem và chuẩn hóa về chữ thường
+            string keyword = txttimkiem.Text.Trim().ToLower();
 
-            // Duyệt qua các mục trong listViewReport và tìm kiếm các mục phù hợp với từ khóa
             foreach (ListViewItem item in listViewReport.Items)
             {
                 bool matched = false;
 
-                // Duyệt qua từng cột trong mỗi mục
                 foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
                 {
-                    // Kiểm tra nội dung của cột có chứa từ khóa không
                     if (subItem.Text.ToLower().Contains(keyword))
                     {
                         matched = true;
@@ -317,20 +267,9 @@ namespace CyberNet.GUI
                     }
                 }
 
-                // Nếu một mục được tìm thấy khớp với từ khóa, hiển thị nó, ngược lại ẩn đi
                 item.Selected = matched;
-                item.EnsureVisible(); // Đảm bảo mục được hiển thị trên ListView
+                item.EnsureVisible();
             }
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnxem_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
