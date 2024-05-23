@@ -21,42 +21,32 @@ namespace CyberNet.GUI
         {
             InitializeComponent();
         }
-        private Form currentFormchill;
-        private void openchildform(Form childform)
-        {
-            if (currentFormchill != null)
-            {
-                currentFormchill.Close();
-            }
-            currentFormchill = childform;
-            childform.TopLevel = false;
-            childform.FormBorderStyle = FormBorderStyle.None;
-            childform.Dock = DockStyle.Fill;
-            panel_body.Controls.Add(childform);
-            panel_body.Tag = childform;
-            childform.BringToFront();
-            childform.Show();
-        }
-
+      
+  
         private void gbtnmenu_Click(object sender, EventArgs e)
         {
-            openchildform(new Menu());
+            Menu menu = new Menu
+            {
+                UserName = UserName
+            };  
+            menu.ShowDialog();
             Label1.Text = gbtnmenu.Text;
         }
 
         private void gbtnnaptenon_Click(object sender, EventArgs e)
         {
-            openchildform(new Naptienuser());
+ 
             Label1.Text = gbtnnaptenon.Text;
+            YeuCauNapTien yeuCauNapTien = new YeuCauNapTien
+            {
+                UserName = UserName
+            };
+            yeuCauNapTien.ShowDialog();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (currentFormchill != null)
-            {
-                currentFormchill.Close();
-            }
-            Label1.Text = "Home";
+            
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -72,7 +62,7 @@ namespace CyberNet.GUI
         private void User_Load(object sender, EventArgs e)
         {
             guna2GroupBox1.Text = "Người dùng : "+UserName;
-            dataProvider = new DataProvider();
+
             
             
         }

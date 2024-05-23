@@ -19,8 +19,7 @@ namespace CyberNet.GUI
         {
             InitializeComponent();
             BackColor = Color.Aqua;
-            timer1.Interval= 1000;
-            timer1.Tick += timer1_Tick;
+          
         
         }
 
@@ -40,6 +39,8 @@ namespace CyberNet.GUI
                 button.Text = "Tắt máy";
                 BackColor = Color.Green;
                 IsActive = true;
+                timer1.Interval = 1000;
+                timer1.Tick += timer1_Tick;
                 timer1.Start();
 
             }
@@ -48,6 +49,8 @@ namespace CyberNet.GUI
                 button.Text = "Bật máy";
                 BackColor = Color.Aqua;
                 IsActive = false;
+                timer1.Interval = 1000;
+                timer1.Tick += timer1_Tick;
                 timer1.Stop();
                 counter = 0;
             }

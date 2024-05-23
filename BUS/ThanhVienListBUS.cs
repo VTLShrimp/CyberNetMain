@@ -41,6 +41,10 @@ namespace CyberNet.BUS
             return thanhVienListDAO.SreachMoney(User_name);
         }
 
+        public void UpRechargeRequest(string User_Name, int money)
+        {
+            thanhVienListDAO.UpRechargeRequest(User_Name, money);
+        }
         public void Recharge(string User_Name, int money)
         {
             thanhVienListDAO.Recharge(User_Name, money);
@@ -50,6 +54,16 @@ namespace CyberNet.BUS
         {
             DateTime date = DateTime.Now;
             thanhVienListDAO.InsertThanhVien(info.user_name, info.password, info.email, info.phone, date);
+        }
+
+        public void UpdateRequest(string User_Name)
+        {
+            thanhVienListDAO.UpdateRequest(User_Name);
+        }
+
+        public DataTable LoadRequest()
+        {
+            return thanhVienListDAO.LoadRequest();
         }
 
         public void update()

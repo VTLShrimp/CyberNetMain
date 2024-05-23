@@ -28,57 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2RadioButton2 = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.guna2RadioButton1 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.gnbtnnuoc = new Guna.UI2.WinForms.Guna2Button();
-            this.gnbtnanno = new Guna.UI2.WinForms.Guna2Button();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.gnbtnanvat = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // guna2RadioButton2
-            // 
-            this.guna2RadioButton2.AutoSize = true;
-            this.guna2RadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2RadioButton2.CheckedState.BorderThickness = 0;
-            this.guna2RadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2RadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2RadioButton2.CheckedState.InnerOffset = -4;
-            this.guna2RadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton2.Location = new System.Drawing.Point(625, 383);
-            this.guna2RadioButton2.Name = "guna2RadioButton2";
-            this.guna2RadioButton2.Size = new System.Drawing.Size(150, 24);
-            this.guna2RadioButton2.TabIndex = 25;
-            this.guna2RadioButton2.Text = "Chuyển Khoản";
-            this.guna2RadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2RadioButton2.UncheckedState.BorderThickness = 2;
-            this.guna2RadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // guna2RadioButton1
-            // 
-            this.guna2RadioButton1.AutoSize = true;
-            this.guna2RadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2RadioButton1.CheckedState.BorderThickness = 0;
-            this.guna2RadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2RadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2RadioButton1.CheckedState.InnerOffset = -4;
-            this.guna2RadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton1.Location = new System.Drawing.Point(625, 413);
-            this.guna2RadioButton1.Name = "guna2RadioButton1";
-            this.guna2RadioButton1.Size = new System.Drawing.Size(103, 24);
-            this.guna2RadioButton1.TabIndex = 24;
-            this.guna2RadioButton1.Text = "Tiền mặt";
-            this.guna2RadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2RadioButton1.UncheckedState.BorderThickness = 2;
-            this.guna2RadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // guna2Button3
             // 
@@ -94,11 +51,11 @@
             this.guna2Button3.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(625, 333);
+            this.guna2Button3.Location = new System.Drawing.Point(607, 333);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(139, 35);
+            this.guna2Button3.Size = new System.Drawing.Size(168, 35);
             this.guna2Button3.TabIndex = 23;
-            this.guna2Button3.Text = "Thanh toán";
+            this.guna2Button3.Text = "Đặt";
             // 
             // guna2Button2
             // 
@@ -150,54 +107,6 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Các món đã chọn:";
             // 
-            // gnbtnnuoc
-            // 
-            this.gnbtnnuoc.BorderColor = System.Drawing.Color.Transparent;
-            this.gnbtnnuoc.BorderRadius = 5;
-            this.gnbtnnuoc.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.gnbtnnuoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gnbtnnuoc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.gnbtnnuoc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.gnbtnnuoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.gnbtnnuoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.gnbtnnuoc.FillColor = System.Drawing.Color.Black;
-            this.gnbtnnuoc.FocusedColor = System.Drawing.Color.White;
-            this.gnbtnnuoc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gnbtnnuoc.ForeColor = System.Drawing.Color.White;
-            this.gnbtnnuoc.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.gnbtnnuoc.HoverState.CustomBorderColor = System.Drawing.Color.Black;
-            this.gnbtnnuoc.HoverState.FillColor = System.Drawing.Color.White;
-            this.gnbtnnuoc.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.gnbtnnuoc.Location = new System.Drawing.Point(456, 13);
-            this.gnbtnnuoc.Name = "gnbtnnuoc";
-            this.gnbtnnuoc.Size = new System.Drawing.Size(99, 46);
-            this.gnbtnnuoc.TabIndex = 19;
-            this.gnbtnnuoc.Text = "Nước";
-            // 
-            // gnbtnanno
-            // 
-            this.gnbtnanno.BorderColor = System.Drawing.Color.Transparent;
-            this.gnbtnanno.BorderRadius = 5;
-            this.gnbtnanno.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.gnbtnanno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gnbtnanno.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.gnbtnanno.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.gnbtnanno.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.gnbtnanno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.gnbtnanno.FillColor = System.Drawing.Color.Black;
-            this.gnbtnanno.FocusedColor = System.Drawing.Color.White;
-            this.gnbtnanno.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gnbtnanno.ForeColor = System.Drawing.Color.White;
-            this.gnbtnanno.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.gnbtnanno.HoverState.CustomBorderColor = System.Drawing.Color.Black;
-            this.gnbtnanno.HoverState.FillColor = System.Drawing.Color.White;
-            this.gnbtnanno.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.gnbtnanno.Location = new System.Drawing.Point(342, 13);
-            this.gnbtnanno.Name = "gnbtnanno";
-            this.gnbtnanno.Size = new System.Drawing.Size(99, 46);
-            this.gnbtnanno.TabIndex = 18;
-            this.gnbtnanno.Text = "Ăn no";
-            // 
             // listView2
             // 
             this.listView2.HideSelection = false;
@@ -206,30 +115,6 @@
             this.listView2.Size = new System.Drawing.Size(225, 221);
             this.listView2.TabIndex = 17;
             this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // gnbtnanvat
-            // 
-            this.gnbtnanvat.BorderColor = System.Drawing.Color.Transparent;
-            this.gnbtnanvat.BorderRadius = 5;
-            this.gnbtnanvat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.gnbtnanvat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gnbtnanvat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.gnbtnanvat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.gnbtnanvat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.gnbtnanvat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.gnbtnanvat.FillColor = System.Drawing.Color.Black;
-            this.gnbtnanvat.FocusedColor = System.Drawing.Color.White;
-            this.gnbtnanvat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gnbtnanvat.ForeColor = System.Drawing.Color.White;
-            this.gnbtnanvat.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.gnbtnanvat.HoverState.CustomBorderColor = System.Drawing.Color.Black;
-            this.gnbtnanvat.HoverState.FillColor = System.Drawing.Color.White;
-            this.gnbtnanvat.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.gnbtnanvat.Location = new System.Drawing.Point(228, 13);
-            this.gnbtnanvat.Name = "gnbtnanvat";
-            this.gnbtnanvat.Size = new System.Drawing.Size(99, 46);
-            this.gnbtnanvat.TabIndex = 16;
-            this.gnbtnanvat.Text = "Ăn vặt";
             // 
             // label1
             // 
@@ -255,37 +140,27 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.guna2RadioButton2);
-            this.Controls.Add(this.guna2RadioButton1);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.gnbtnnuoc);
-            this.Controls.Add(this.gnbtnanno);
             this.Controls.Add(this.listView2);
-            this.Controls.Add(this.gnbtnanvat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton2;
-        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button gnbtnnuoc;
-        private Guna.UI2.WinForms.Guna2Button gnbtnanno;
         private System.Windows.Forms.ListView listView2;
-        private Guna.UI2.WinForms.Guna2Button gnbtnanvat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
     }

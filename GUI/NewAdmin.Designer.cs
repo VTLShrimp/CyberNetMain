@@ -85,7 +85,7 @@
             this.Static_button.ForeColor = System.Drawing.Color.White;
             this.Static_button.Image = ((System.Drawing.Image)(resources.GetObject("Static_button.Image")));
             this.Static_button.ImageSize = new System.Drawing.Size(90, 80);
-            this.Static_button.Location = new System.Drawing.Point(803, 0);
+            this.Static_button.Location = new System.Drawing.Point(890, 0);
             this.Static_button.Name = "Static_button";
             this.Static_button.Size = new System.Drawing.Size(113, 84);
             this.Static_button.TabIndex = 4;
@@ -102,7 +102,7 @@
             this.Chat_button.ForeColor = System.Drawing.Color.White;
             this.Chat_button.Image = ((System.Drawing.Image)(resources.GetObject("Chat_button.Image")));
             this.Chat_button.ImageSize = new System.Drawing.Size(70, 70);
-            this.Chat_button.Location = new System.Drawing.Point(602, 0);
+            this.Chat_button.Location = new System.Drawing.Point(653, 0);
             this.Chat_button.Name = "Chat_button";
             this.Chat_button.Size = new System.Drawing.Size(113, 84);
             this.Chat_button.TabIndex = 3;
@@ -119,7 +119,7 @@
             this.User_button.ForeColor = System.Drawing.Color.White;
             this.User_button.Image = ((System.Drawing.Image)(resources.GetObject("User_button.Image")));
             this.User_button.ImageSize = new System.Drawing.Size(100, 70);
-            this.User_button.Location = new System.Drawing.Point(405, 0);
+            this.User_button.Location = new System.Drawing.Point(423, 0);
             this.User_button.Name = "User_button";
             this.User_button.Size = new System.Drawing.Size(113, 84);
             this.User_button.TabIndex = 2;

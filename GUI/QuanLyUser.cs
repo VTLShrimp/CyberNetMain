@@ -53,6 +53,18 @@ namespace CyberNet.GUI
             dgLichsu.Columns[2].Width = 150;
         }
 
+        private void DinhDangYeucau()
+        {
+            dgYeuCau.ColumnHeadersHeight = 40;
+            dgYeuCau.Columns[0].HeaderText = "Tên tài khoản";
+            dgYeuCau.Columns[0].Width = 130;
+            dgYeuCau.Columns[1].HeaderText = "Số tiền";
+            dgYeuCau.Columns[1].Width = 100;
+            dgYeuCau.Columns[2].HeaderText = "Ngày yêu cầu";
+            dgYeuCau.Columns[2].Width = 150;
+        }
+
+
         private void QuanLyUser_Load(object sender, EventArgs e)
         {
             DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
@@ -63,6 +75,8 @@ namespace CyberNet.GUI
             DinhDangLuoi();
             int tong = dgThanhvien.RowCount;
             txttong.Text = tong.ToString();
+            dgYeuCau.DataSource = ThanhVienListBUS.LoadRequest();
+            DinhDangYeucau();
         }
 
         private void dgThanhvien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -91,11 +105,7 @@ namespace CyberNet.GUI
             }
         }
 
-        private void btnsua_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void ReloadData()
         {
             DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
@@ -112,6 +122,7 @@ namespace CyberNet.GUI
                 dgLichsu.DataSource = ThanhVienListBUS.RechargeHistory(TenTaiKhoan);
 
             }
+            dgYeuCau.DataSource = ThanhVienListBUS.LoadRequest();
         }
 
 
@@ -172,6 +183,24 @@ namespace CyberNet.GUI
             }
             int tong = dgThanhvien.RowCount;
             txttong.Text = tong.ToString();
+        }
+
+        private void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string money = dgYeuCau.CurrentRow.Cells["Money"].Value.ToString();
+            decimal tempMoney = Convert.ToDecimal(money);
+            int finalMoney = Convert.ToInt32(tempMoney);
+            DataGridViewRow selectedRow = dgYeuCau.CurrentRow;
+            if (selectedRow != null)
+            {
+                string userName = selectedRow.Cells["User_Name"].Value.ToString();
+                NapTien napTien = new NapTien(userName)
+                {
+                    money = Convert.ToInt32(finalMoney)
+                };
+                napTien.FormClosedEvent += ReloadData;
+                napTien.ShowDialog();
+            }
         }
     }
 }

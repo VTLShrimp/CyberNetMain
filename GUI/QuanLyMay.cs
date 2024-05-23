@@ -59,7 +59,7 @@ namespace CyberNet.GUI
             flowLayoutPanel1.WrapContents = true;
             flowLayoutPanel1.Padding = new Padding(10);
             flowLayoutPanel1.AutoSize = false;
-            flowLayoutPanel1.Dock = DockStyle.Fill; // Add this line to center the content
+            flowLayoutPanel1.Dock = DockStyle.Fill; 
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

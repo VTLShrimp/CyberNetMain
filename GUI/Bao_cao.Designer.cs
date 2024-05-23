@@ -33,9 +33,9 @@ namespace CyberNet.GUI
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.cbtuychon = new System.Windows.Forms.ComboBox();
@@ -161,7 +161,6 @@ namespace CyberNet.GUI
             this.btnxem.TabIndex = 34;
             this.btnxem.Text = "Xem Báo Cáo";
             this.btnxem.UseVisualStyleBackColor = true;
-            this.btnxem.Click += new System.EventHandler(this.btnxem_Click_1);
             // 
             // cbnam
             // 
@@ -207,22 +206,23 @@ namespace CyberNet.GUI
             // 
             // chartReport
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartReport.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartReport.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartReport.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartReport.Legends.Add(legend1);
             this.chartReport.Location = new System.Drawing.Point(82, 80);
             this.chartReport.Name = "chartReport";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartReport.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartReport.Series.Add(series1);
             this.chartReport.Size = new System.Drawing.Size(799, 293);
             this.chartReport.TabIndex = 33;
             this.chartReport.Text = "chart1";
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(227)))), ((int)(((byte)(233)))));
             this.guna2Panel1.Controls.Add(this.lable1);
             this.guna2Panel1.Controls.Add(this.txttong);
             this.guna2Panel1.Controls.Add(this.chartReport);
@@ -237,7 +237,6 @@ namespace CyberNet.GUI
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1175, 625);
             this.guna2Panel1.TabIndex = 34;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // Bao_cao
             // 

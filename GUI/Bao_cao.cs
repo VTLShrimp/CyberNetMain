@@ -266,7 +266,6 @@ namespace CyberNet.GUI
                         break;
                     }
                 }
-
                 item.Selected = matched;
                 item.EnsureVisible();
             }

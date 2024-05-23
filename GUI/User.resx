@@ -435,4 +435,10 @@
         QKADABAAAh0AgAAQ6AAABIBABwAgAAQ6AAABINABAMg9Y/4PXqCFFOzzmxQAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="Remain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="WasUse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 17</value>
+  </metadata>
 </root>

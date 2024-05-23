@@ -17,6 +17,7 @@ namespace CyberNet.GUI
     public partial class NapTien : Form
     {
         public event Action FormClosedEvent;
+        public int money { get; set;}
 
         ThanhVienListBUS thanhVienListBUS = new ThanhVienListBUS();
         LichSuBUS lichSuBUS = new LichSuBUS();
@@ -33,17 +34,35 @@ namespace CyberNet.GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
-            DataProvider dataProvider = new DataProvider();
-            dataProvider.connect();
-            thanhVienListBUS.Recharge(username, Convert.ToInt32(guna2TextBox1.Text));
-            lichSuBUS.insertRecharge(username, Convert.ToInt32(guna2TextBox1.Text));
-            Close();
+            if (money == 0)
+            {
+                DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
+                DataProvider dataProvider = new DataProvider();
+                dataProvider.connect();
+                thanhVienListBUS.Recharge(username, Convert.ToInt32(guna2TextBox1.Text));
+                lichSuBUS.insertRecharge(username, Convert.ToInt32(guna2TextBox1.Text));
+                Close();
+            }
+            else
+            {
+                DataProvider.connectionString = "Data Source=LAMLMAO;Initial Catalog=Cyber_Database;Integrated Security=True";
+                DataProvider dataProvider = new DataProvider();
+                dataProvider.connect();
+                thanhVienListBUS.Recharge(username, Convert.ToInt32(guna2TextBox1.Text));
+                lichSuBUS.insertRecharge(username, Convert.ToInt32(guna2TextBox1.Text));
+                thanhVienListBUS.UpdateRequest(username);
+                Close();
+            }
         }
 
         private void NapTien_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormClosedEvent?.Invoke();
+        }
+
+        private void NapTien_Load(object sender, EventArgs e)
+        {
+            guna2TextBox1.Text = money.ToString();
         }
     }
 }

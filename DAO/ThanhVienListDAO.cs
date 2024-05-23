@@ -90,5 +90,23 @@ namespace CyberNet.DTO
             string sql = "select money from Customer_List where User_Name = '"+User_Name+"'";
             return dataProvider.executeQuery(sql);
         }
+
+        public void UpRechargeRequest(string User_Name, int money)
+        {
+            string sql = "insert into YeuCauNapTien values('" + User_Name + "'," + money + ",GETDATE())";
+            dataProvider.executeNonQuery(sql);
+        }
+
+        public DataTable LoadRequest()
+        {
+            string sql = "select * from YeuCauNapTien where IsDone = 'No'";
+            return dataProvider.executeQuery(sql);
+        }
+
+        public void UpdateRequest(string User_Name)
+        {
+            string sql = "update YeuCauNapTien set IsDone = 'Yes' where User_Name = '" + User_Name + "'";
+            dataProvider.executeNonQuery(sql);
+        }
     }
 }
